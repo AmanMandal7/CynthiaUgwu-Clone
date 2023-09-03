@@ -155,4 +155,10 @@ body {
 /* Styling the about section  */
 #about {
   width: 100%;
+  background-color: black;
+  padding: 10vw 5vw;
+}
+
+#about img {
+  width: 20vw;
 }
