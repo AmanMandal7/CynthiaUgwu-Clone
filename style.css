@@ -13,7 +13,6 @@ body {
 
 #main {
   width: 100%;
-  background-color: red;
 }
 
 #hero {
@@ -108,4 +107,52 @@ body {
   height: 25px;
   border-radius: 50%;
   background-color: #888;
+}
+
+/* Styling the second page  */
+#second {
+  color: #fff;
+  padding-right: 10vw;
+  padding-left: 3vw;
+  padding-top: 200px;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+#second .elem {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid #888;
+  padding: 3.6vw 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.elem h1 {
+  text-transform: uppercase;
+  font-size: 7.2vw;
+  opacity: 0.7;
+}
+
+.elem h5 {
+  font-weight: 100;
+  font-size: 1.5vw;
+}
+
+.elemlast {
+  border-bottom: 1px solid #888;
+}
+
+.elem img {
+  position: absolute;
+  z-index: 999;
+  height: 140%;
+  display: none;
+}
+
+/* Styling the about section  */
+#about {
+  width: 100%;
 }
