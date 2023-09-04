@@ -24,7 +24,6 @@ body {
 .bounding {
   width: fit-content;
   overflow: hidden;
-  background-color: rebeccapurple;
 }
 
 .bounding .boundingelem {
