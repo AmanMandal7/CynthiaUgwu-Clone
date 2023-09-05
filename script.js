@@ -34,10 +34,15 @@ function squizTheCircle() {
     window.addEventListener("mousemove", function (dets) {
         var xdiff = dets.clientX - xprev;
         var ydiff = dets.clientY - yprev;
+
+        xscale = gsap.utils.clamp(.8, 1.2, xdiff);
+        yscale = gsap.utils.clamp(.8, 1.2, ydiff);
+
         xprev = dets.clientX;
         yprev = dets.clientY;
     })
 }
+squizTheCircle();
 
 function circleMouseFoller() {
     window.addEventListener("mousemove", function (dets) {
