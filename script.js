@@ -25,6 +25,8 @@ function firstPageAim() {
     })
 }
 
+var timeout;
+
 function squizTheCircle() {
     var xscale = 1;
     var yscale = 1;
@@ -32,21 +34,41 @@ function squizTheCircle() {
     var xprev = 0;
     var yprev = 0;
     window.addEventListener("mousemove", function (dets) {
+        clearTimeout(timeout);
         var xdiff = dets.clientX - xprev;
         var ydiff = dets.clientY - yprev;
 
-        xscale = gsap.utils.clamp(.8, 1.2, xdiff);
-        yscale = gsap.utils.clamp(.8, 1.2, ydiff);
+        //Logic from the video
+        // xscale = gsap.utils.clamp(1.2, 1.2, xdiff);
+        // yscale = gsap.utils.clamp(.8, .8, ydiff);
 
         xprev = dets.clientX;
         yprev = dets.clientY;
+
+        //Login made by myself
+        if (xdiff) {
+            xscale = 1.3;
+        } else {
+            xscale = 1
+        }
+        if (ydiff) {
+            yscale = 1.3;
+        } else {
+            yscale = 1
+        }
+
+        circleMouseFoller(xscale, yscale);
+
+        timeout = setTimeout(() => {
+            document.querySelector("#minicircle").style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(1, 1)`
+        }, 100);
     })
 }
 squizTheCircle();
 
-function circleMouseFoller() {
+function circleMouseFoller(xscale, yscale) {
     window.addEventListener("mousemove", function (dets) {
-        document.querySelector("#minicircle").style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`
+        document.querySelector("#minicircle").style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(${xscale}, ${yscale})`
     });
 }
 

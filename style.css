@@ -14,8 +14,8 @@ body {
 #minicircle {
   position: absolute;
   z-index: 99999;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background-color: #fff;
   border-radius: 100%;
   transition: all 0.15s ease-out;
