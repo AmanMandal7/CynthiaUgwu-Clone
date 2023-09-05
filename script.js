@@ -25,6 +25,20 @@ function firstPageAim() {
     })
 }
 
+function squizTheCircle() {
+    var xscale = 1;
+    var yscale = 1;
+
+    var xprev = 0;
+    var yprev = 0;
+    window.addEventListener("mousemove", function (dets) {
+        var xdiff = dets.clientX - xprev;
+        var ydiff = dets.clientY - yprev;
+        xprev = dets.clientX;
+        yprev = dets.clientY;
+    })
+}
+
 function circleMouseFoller() {
     window.addEventListener("mousemove", function (dets) {
         document.querySelector("#minicircle").style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`
