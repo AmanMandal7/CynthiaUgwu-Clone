@@ -75,10 +75,38 @@ circleMouseFoller();
 // firstPageAim();
 
 document.querySelectorAll(".elem").forEach((elem) => {
+    var rotate = 0;
+    var diffrot = 0;
+
     elem.addEventListener("mousemove", (dets) => {
+        var diff = dets.clientY - elem.getBoundingClientRect().top;
+
+        // console.log(elem.getBoundingClientRect().top, dets.clientY);
+
+        diffrot = dets.clientX - rotate;
+        rotate = dets.clientX;
+
         gsap.to(elem.querySelector("img"), {
             opacity: 1,
-            ease: Power1
-        })
+            ease: Power3,
+            top: diff,
+            left: dets.clientX,
+            rotate: gsap.utils.clamp(-15, 15, diffrot)
+        });
+
+        document.querySelector("#minicircle").classList.add('active');
+        document.querySelector("#minicircle").innerText = "view";
+        console.log(document.querySelector("#minicircle"));
     })
+
+    elem.addEventListener("mouseleave", (dets) => {
+        gsap.to(elem.querySelector("img"), {
+            opacity: 0,
+            ease: Power3,
+            duration: 0.5
+        })
+        document.querySelector("#minicircle").classList.remove('active');
+        document.querySelector("#minicircle").innerText = "";
+    })
+
 })

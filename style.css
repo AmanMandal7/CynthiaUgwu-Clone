@@ -16,10 +16,30 @@ body {
   z-index: 99999;
   width: 10px;
   height: 10px;
+  margin: -3px -4px;
   background-color: #fff;
   border-radius: 100%;
   transition: all 0.15s ease-out;
 }
+
+#minicircle.active {
+  margin: -30px -30px;
+  cursor: pointer;
+  opacity: 0.9;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+/* #minicircle.active::before {
+  position: absolute;
+  content: "view";
+  transform: translate(40%, 80%);
+} */
 
 .bounding {
   width: fit-content;
@@ -153,6 +173,7 @@ body {
   border-top: 1px solid #888;
   padding: 3.6vw 0;
   display: flex;
+  cursor: pointer;
   justify-content: space-between;
   align-items: center;
 }
@@ -177,6 +198,8 @@ body {
   z-index: 999;
   height: 140%;
   opacity: 0;
+  pointer-events: none;
+  transform: translate(-60%, -50%);
 }
 
 /* Styling the about section  */
