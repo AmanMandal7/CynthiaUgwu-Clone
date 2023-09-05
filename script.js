@@ -26,7 +26,6 @@ function firstPageAim() {
 }
 
 var timeout;
-
 function squizTheCircle() {
     var xscale = 1;
     var yscale = 1;
@@ -64,7 +63,6 @@ function squizTheCircle() {
         }, 100);
     })
 }
-squizTheCircle();
 
 function circleMouseFoller(xscale, yscale) {
     window.addEventListener("mousemove", function (dets) {
@@ -72,5 +70,15 @@ function circleMouseFoller(xscale, yscale) {
     });
 }
 
+squizTheCircle();
 circleMouseFoller();
-firstPageAim();
+// firstPageAim();
+
+document.querySelectorAll(".elem").forEach((elem) => {
+    elem.addEventListener("mousemove", (dets) => {
+        gsap.to(elem.querySelector("img"), {
+            opacity: 1,
+            ease: Power1
+        })
+    })
+})
