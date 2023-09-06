@@ -1,27 +1,24 @@
 ## Cynthia Ugwu - Clone
 
-It's clone of Cynthia Ugwu Website with some cool animations
+It's a clone of Cynthia Ugwu Website with some cool animations
 
 ## Tech Stack
 
 **Frontend:** HTML, CSS & JavaScript
 
-## Features
+## Some Screenshots
 
-- Authentication(Login/SignUp)
-  ![App Screenshot](https://github.com/AmanMandal7/YouTube-Clone/blob/master/screenshots/Login%20Sign%20Up.png)
+- Home Page
+  ![App Screenshot](https://github.com/AmanMandal7/CynthiaUgwu-Clone/blob/master/Screenshots/Home%20page.png)
 
-- Homepage
-  ![App Screenshot](https://github.com/AmanMandal7/YouTube-Clone/blob/master/screenshots/Home%20Screen.png)
+- Scrollabel Image - 1
+  ![App Screenshot](https://github.com/AmanMandal7/CynthiaUgwu-Clone/blob/master/Screenshots/Scrollable%20image%201.png)
 
-- Dark and Light Mode(by default-Dark Mode)
-  ![App Screenshot](https://github.com/AmanMandal7/YouTube-Clone/blob/master/screenshots/Dark%20and%20Light%20Mode.png)
+- Scrollabel Image - 2
+  ![App Screenshot](https://github.com/AmanMandal7/CynthiaUgwu-Clone/blob/master/Screenshots/Scrollable%20image%202.png)
 
-- Video with details
-  ![App Screenshot](https://github.com/AmanMandal7/YouTube-Clone/blob/master/screenshots/Video%20with%20all%20the%20details.png)
-
-- Comments on a Video
-  ![App Screenshot](https://github.com/AmanMandal7/YouTube-Clone/blob/master/screenshots/comments.png)
+- About Section
+  ![App Screenshot](https://github.com/AmanMandal7/CynthiaUgwu-Clone/blob/master/Screenshots/About%20section.png)
 
 ## 🔗 Links
 
