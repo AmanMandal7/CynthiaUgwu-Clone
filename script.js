@@ -1,3 +1,8 @@
+const elem1 = document.querySelector(".elem1");
+const elem2 = document.querySelector(".elem2");
+const elem3 = document.querySelector(".elem3");
+const mainPage = document.querySelector("#main")
+
 const scroll = new LocomotiveScroll({
     el: document.querySelector('#main'),
     smooth: true
@@ -72,41 +77,94 @@ function circleMouseFoller(xscale, yscale) {
 
 squizTheCircle();
 circleMouseFoller();
-// firstPageAim();
+firstPageAim();
 
-document.querySelectorAll(".elem").forEach((elem) => {
-    var rotate = 0;
-    var diffrot = 0;
+var rotate1 = 0;
+var rotate2 = 0;
+var rotate3 = 0;
+var diffrot1 = 0;
+var diffrot2 = 0;
+var diffrot3 = 0;
 
-    elem.addEventListener("mousemove", (dets) => {
-        var diff = dets.clientY - elem.getBoundingClientRect().top;
+mainPage.addEventListener("mousemove", (dets) => {
+    // For the element 1 
+    var elem1BottomVal = elem1.getBoundingClientRect().bottom;
+    var elem1TopVal = elem1.getBoundingClientRect().top;
 
-        // console.log(elem.getBoundingClientRect().top, dets.clientY);
-
-        diffrot = dets.clientX - rotate;
-        rotate = dets.clientX;
-
-        gsap.to(elem.querySelector("img"), {
+    var diff1 = dets.clientY - elem1.getBoundingClientRect().top;
+    diffrot1 = dets.clientX - rotate1;
+    rotate1 = dets.clientX;
+    if (dets.clientY > elem1TopVal && dets.clientY < elem1BottomVal) {
+        gsap.to(elem1.querySelector("img"), {
             opacity: 1,
-            ease: Power3,
-            top: diff,
+            ease: Power1,
+            top: diff1,
             left: dets.clientX,
-            rotate: gsap.utils.clamp(-15, 15, diffrot)
+            rotate: gsap.utils.clamp(-15, 15, diffrot1)
         });
+        elem1.classList.add("active");
+    } else {
+        gsap.to(elem1.querySelector("img"), {
+            opacity: 0,
+            duration: 0.1
+        })
+        elem1.classList.remove("active")
+    };
 
+    // For the element 2 
+    var elem2BottomVal = elem2.getBoundingClientRect().bottom;
+    var elem2TopVal = elem2.getBoundingClientRect().top;
+
+    var diff2 = dets.clientY - elem2.getBoundingClientRect().top;
+    diffrot2 = dets.clientX - rotate2;
+    rotate2 = dets.clientX;
+    if (dets.clientY > elem2TopVal && dets.clientY < elem2BottomVal) {
+        gsap.to(elem2.querySelector("img"), {
+            opacity: 1,
+            ease: Power1,
+            top: diff2,
+            left: dets.clientX,
+            rotate: gsap.utils.clamp(-15, 15, diffrot2)
+        });
+        elem2.classList.add("active");
+    } else {
+        gsap.to(elem2.querySelector("img"), {
+            opacity: 0,
+            duration: 0.1
+        });
+        elem2.classList.remove("active");
+    };
+
+    // For the element 3
+    var elem3BottomVal = elem3.getBoundingClientRect().bottom;
+    var elem3TopVal = elem3.getBoundingClientRect().top;
+
+    var diff3 = dets.clientY - elem3.getBoundingClientRect().top;
+    diffrot3 = dets.clientX - rotate3;
+    rotate3 = dets.clientX;
+    if (dets.clientY > elem3TopVal && dets.clientY < elem3BottomVal) {
+        gsap.to(elem3.querySelector("img"), {
+            opacity: 1,
+            ease: Power1,
+            top: diff3,
+            left: dets.clientX,
+            rotate: gsap.utils.clamp(-15, 15, diffrot3)
+        });
+        elem3.classList.add("active");
+    } else {
+        gsap.to(elem3.querySelector("img"), {
+            opacity: 0,
+            duration: 0.1
+        });
+        elem3.classList.remove("active");
+    };
+
+    // For mouse cursor 
+    if (dets.clientY > elem1TopVal && dets.clientY < elem3BottomVal) {
         document.querySelector("#minicircle").classList.add('active');
         document.querySelector("#minicircle").innerText = "view";
-        console.log(document.querySelector("#minicircle"));
-    })
-
-    // elem.addEventListener("mouseleave", (dets) => {
-    //     gsap.to(elem.querySelector("img"), {
-    //         opacity: 0,
-    //         ease: Power3,
-    //         duration: 0.5
-    //     })
-    //     document.querySelector("#minicircle").classList.remove('active');
-    //     document.querySelector("#minicircle").innerText = "";
-    // })
-
+    } else {
+        document.querySelector("#minicircle").classList.remove('active');
+        document.querySelector("#minicircle").innerText = "";
+    }
 })
