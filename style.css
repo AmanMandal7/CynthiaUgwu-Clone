@@ -9,6 +9,7 @@ html,
 body {
   width: 100%;
   height: 100%;
+  background-color: black;
 }
 
 #minicircle {
@@ -35,12 +36,6 @@ body {
   font-size: 15px;
 }
 
-/* #minicircle.active::before {
-  position: absolute;
-  content: "view";
-  transform: translate(40%, 80%);
-} */
-
 .bounding {
   width: fit-content;
   overflow: hidden;
@@ -53,6 +48,7 @@ body {
 #main {
   width: 100%;
   background-color: black;
+  position: relative;
 }
 
 #hero {
@@ -60,16 +56,17 @@ body {
   color: #fff;
   width: 100%;
   height: 100vh;
-  background-color: black;
 }
 
 #nav {
+  background-color: black;
+  z-index: 999;
   display: flex;
   align-self: center;
   justify-content: space-between;
   width: 100%;
   color: #fff;
-  padding: 20px 40px;
+  padding: 25px 40px;
 }
 
 #nav a {
@@ -277,6 +274,7 @@ body {
   background-color: black;
   color: #fff;
   padding: 40px 30px;
+  margin-bottom: 2px;
 }
 
 #footerleft {
