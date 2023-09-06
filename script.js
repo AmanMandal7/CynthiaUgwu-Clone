@@ -99,14 +99,14 @@ document.querySelectorAll(".elem").forEach((elem) => {
         console.log(document.querySelector("#minicircle"));
     })
 
-    elem.addEventListener("mouseleave", (dets) => {
-        gsap.to(elem.querySelector("img"), {
-            opacity: 0,
-            ease: Power3,
-            duration: 0.5
-        })
-        document.querySelector("#minicircle").classList.remove('active');
-        document.querySelector("#minicircle").innerText = "";
-    })
+    // elem.addEventListener("mouseleave", (dets) => {
+    //     gsap.to(elem.querySelector("img"), {
+    //         opacity: 0,
+    //         ease: Power3,
+    //         duration: 0.5
+    //     })
+    //     document.querySelector("#minicircle").classList.remove('active');
+    //     document.querySelector("#minicircle").innerText = "";
+    // })
 
 })
